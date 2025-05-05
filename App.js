@@ -66,7 +66,7 @@ const estilos = StyleSheet.create({
   View: {
     flex: 1,
     flexDirection: 'column',
-    padding: 10,
+    padding: 20,
   },
   texto: {
     fontSize: 36,
@@ -95,17 +95,17 @@ const estilos = StyleSheet.create({
     color: 'black',
   },
   cBotoes: {
-    flex: 0.3,
+    flex: 0.5,
     flexDirection: 'column',
     justifyContent: 'center',
     alignContent: 'center',
-    padding: 10,
+    padding: 5,
   },
   resultado: {
     fontSize: 30,
     color: '#F15025',
     textAlign: 'center',
-    marginTop: 20,
+    marginTop: 15,
   },
 });
 
