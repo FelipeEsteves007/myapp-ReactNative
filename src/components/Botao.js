@@ -12,8 +12,8 @@ const Botao = ({ texto, funcao }) => {
 const estilos = StyleSheet.create({
   botao: {
     backgroundColor: '#F15025',
-    padding: 15,
-    borderRadius: 10,
+    padding: 13,
+    borderRadius: 8,
     marginVertical: 10,
     alignItems: 'center',
   },
@@ -21,6 +21,7 @@ const estilos = StyleSheet.create({
     color: '#fff',
     fontSize: 20,
     fontWeight: 'bold',
+    fontFamily: 'AveriaLibre-Regular',
   },
 });
 

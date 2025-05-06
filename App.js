@@ -1,6 +1,17 @@
-import { View, Text, TextInput, Image, StyleSheet } from 'react-native';
+import { View, Text, Image, StyleSheet } from 'react-native';
 import { useState } from 'react';
 import Botao from './src/components/Botao';
+import { PaperProvider, MD3LightTheme as DefaultTheme } from 'react-native-paper';
+import { TextInput } from 'react-native-paper';
+
+const theme = {
+  ...DefaultTheme,
+  colors: {
+    ...DefaultTheme.colors,
+    primary: 'tomato',
+    secondary: 'yellow',
+  }
+};
 
 const App = () => {
   const [txtPeso, setPeso] = useState('');
@@ -27,38 +38,40 @@ const App = () => {
   };
 
   return (
-    <View style={estilos.View}>
-      <View style={estilos.cImage}>
-        <Image
-          style={{ width: '80%', height: '90%' }}
-          source={require('./src/components/body.png')}
-        />
-      </View>
+    <PaperProvider theme={theme}>
+      <View style={estilos.View}>
+        {/* <Icon name="spotify" size={100} color="#000000" /> */}
 
-      <View style={estilos.cInput}>
-        <Text style={estilos.texto}>Peso:</Text>
-        <TextInput
+        <View style={estilos.cImage}>
+          <Image
+            style={{ width: '80%', height: '90%' }}
+            source={require('./src/components/body.png')}
+          />
+        </View>
+
+        <TextInput 
           style={estilos.textInput}
+          label="Peso"
           value={txtPeso}
           onChangeText={setPeso}
-          keyboardType="numeric"
+          placeholder='Digite seu peso'
         />
 
-        <Text style={estilos.texto}>Altura:</Text>
         <TextInput
           style={estilos.textInput}
+          label="Altura"  
           value={txtAltura}
           onChangeText={setAltura}
-          keyboardType="numeric"
+          placeholder='Digite sua altura'
         />
-      </View>
 
-      <View style={estilos.cBotoes}>
-        <Botao texto="Calcular" funcao={calcularIMC} />
-        <Botao texto="Limpar" funcao={limpar} />
-        <Text style={estilos.resultado}>{txtImc}</Text>
+        <View style={estilos.cBotoes}>
+          <Botao texto="Calcular" funcao={calcularIMC} />
+          <Botao texto="Limpar" funcao={limpar} />
+          <Text style={estilos.resultado}>{txtImc}</Text>
+        </View>
       </View>
-    </View>
+    </PaperProvider>
   );
 };
 
@@ -69,30 +82,24 @@ const estilos = StyleSheet.create({
     padding: 20,
   },
   texto: {
-    fontSize: 36,
+    fontSize: 30,
     color: 'black',
+    fontFamily: 'AveriaLibre-Regular',
   },
   textInput: {
-    fontSize: 36,
+    fontSize: 30,
     borderWidth: 1,
     borderColor: '#F15025',
     backgroundColor: '#FFFFFF',
     color: 'black',
-    marginBottom: 10,
-    padding: 10,
+    marginBottom: 5,
+    padding: 5,
   },
   cImage: {
-    flex: 0.3,
+    flex: 0.4,
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
-  },
-  cInput: {
-    flex: 0.5,
-    flexDirection: 'column',
-    justifyContent: 'center',
-    padding: 10,
-    color: 'black',
   },
   cBotoes: {
     flex: 0.5,
