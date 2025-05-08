@@ -16,8 +16,7 @@ const Login = (props) => {
         <View>
           <TextInput value={email} onChangeText={setEmail} label="Email" placeholder="Insira o e-mail"/>
           <TextInput value={password} onChangeText={setPassword} label="Password" placeholder="Insira sua senha"/>
-            <Button style={{ backgroundColor: 'gray'}}onPress={goToCalculadora}>Entrar</Button>
-
+            <Button style={{ backgroundColor: '#F15025'}} labelStyle={{color: 'white'}}  onPress={goToCalculadora}>Entrar</Button>
         </View>
     );
 }
