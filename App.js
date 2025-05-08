@@ -8,12 +8,12 @@ const Stack = createNativeStackNavigator();
 const App = () => {
     return (
         <NavigationContainer>
-            <Stack.Navigator inictialRouteName="login">
-            <Stack.Screen name = "login" component={Login}/>
-            <Stack.Screen name = "calculadora" component={Calculadora}/>
+            <Stack.Navigator initialRouteName="login" screenOptions={{ headerTintColor: 'white', headerStyle: { backgroundColor: '#F15025' }}}>
+                <Stack.Screen name="login" component={Login} options={{headerTitle: 'Login'}}/>
+                <Stack.Screen name="calculadora" component={Calculadora} options={{headerTitle: 'Calculadora - IMC'}}/>
             </Stack.Navigator>
         </NavigationContainer>
     );
-}
+};
 
 export default App;
